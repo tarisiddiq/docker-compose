@@ -8,11 +8,12 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 
-CREATE TABLE `buku` (
-  `id` varchar(10) NOT NULL PRIMARY KEY,
-  `judul` varchar(50) NOT NULL,
-  `pengarang` varchar(50) NOT NULL,
-  `penerbit` varchar(50) NOT NULL
+CREATE TABLE `Mahasiswa` (
+  `nim` varchar(10) NOT NULL PRIMARY KEY,
+  `nama` varchar(50) NOT NULL,
+  `jurusan` varchar(50) NOT NULL,
+  `semester` varchar(50) NOT NULL,
+  `tahun_angkatan` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
