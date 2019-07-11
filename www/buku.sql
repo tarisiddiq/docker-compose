@@ -9,7 +9,8 @@ SET time_zone = "+00:00";
 
 
 CREATE TABLE `Mahasiswa` (
-  `judul` varchar(10) NOT NULL PRIMARY KEY,
+  `id` varchar(10) NOT NULL PRIMARY KEY,
+  `judul` varchar(50) NOT NULL,
   `pengarang` varchar(50) NOT NULL,
   `penerbit` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
