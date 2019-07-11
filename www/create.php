@@ -32,6 +32,18 @@
                 </select>
             </div> 
             <div class="form-group">
+                <label class="control-label col-sm-2" for="nama">Semester:</label>
+                <div class="col-sm-10">
+                <input type="text" class="form-control" name="nama" placeholder="Semester">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="nama">Tahun Angkatan:</label>
+                <div class="col-sm-10">
+                <input type="text" class="form-control" name="nama" placeholder="Angkatan">
+                </div>
+            </div>
+            <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                 <input type="submit" class="btn btn-info" value="Simpan" name="proses">
                 </div>

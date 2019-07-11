@@ -22,6 +22,8 @@
                 <th>NIM</th>
                 <th>Nama</th>
                 <th>Jurusan</th>
+                <th>Semester</th>
+                <th>Tahun Angkatan</th>
                 <th>Aksi</th>
             </tr>
         </thead>';
@@ -31,6 +33,8 @@
         echo '<td>' . $element['nim'] . '</td>';
         echo '<td>' . $element['nama'] . '</td>';
         echo '<td>' . $element['jurusan'] . '</td>';
+        echo '<td>' . $element['semester'] . '</td>';
+        echo '<td>' . $element['tahun_angkatan'] . '</td>';
         
         echo '<td>'.
                 '<a href="read.php?nim='.$element['nim'].'"><span class="glyphicon glyphicon-search"></span></a>&nbsp;&nbsp;'.
