@@ -10,6 +10,8 @@
     $nim = $data["nim"];
     $nama = $data["nama"];
     $jurusan = $data["jurusan"];
+    $semester = $data["semester"];
+    $tahun_angkatan = $data["tahun_angkatan'"];
 ?>
 
 <html>
