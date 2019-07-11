@@ -34,6 +34,14 @@
                 <td>Jurusan</td>
                 <td><?php echo $jurusan;?></td>
             </tr>
+            <tr>
+                <td>Semester</td>
+                <td><?php echo $semester;?></td>
+            </tr>
+            <tr>
+                <td>Tahun Angkatan</td>
+                <td><?php echo $tahun_angkatan;?></td>
+            </tr>
         </tbody>
         </table>
 
