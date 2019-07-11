@@ -8,7 +8,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 
-CREATE TABLE `Mahasiswa` (
+CREATE TABLE `buku` (
   `id` varchar(10) NOT NULL PRIMARY KEY,
   `judul` varchar(50) NOT NULL,
   `pengarang` varchar(50) NOT NULL,
