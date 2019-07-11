@@ -1,9 +1,14 @@
 <?php
-
-$host="localhost";
-$username="root";
-$passoword="";
-$database="wisata";
-$koneksi=mysqli_connect($host, $username, $passoword, $database);
-
+$koneksi = mysqli_connect 
+			(
+				"localhost",
+				"root",
+				"",
+				"crud"
+			);
+if (mysqli_connect_errno())
+	{
+		echo "Koneksi Gagal"
+		.mysqli_connect_error();
+	}
 ?>
