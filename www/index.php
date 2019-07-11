@@ -11,17 +11,17 @@ if (isset($_POST['Input'])) {
 	
 	//input ke db
 	$query = sprintf("INSERT INTO mahasiswa VALUES('%s', '%s', '%s')", 
-			mysql_escape_string($nim), 
-			mysql_escape_string($nama), 
-			mysql_escape_string($alamat)
+			mysqli_escape_string($nim), 
+			mysqli_escape_string($nama), 
+			mysqli_escape_string($alamat)
 		);
-	$sql = mysql_query($query);
+	$sql = mysqli_query($query);
 	$pesan = "";
 	if ($sql) {
 		$pesan = "Data berhasil disimpan";
 	} else {
 		$pesan = "Data gagal disimpan ";
-		$pesan .= mysql_error();
+		$pesan .= mysqli_error();
 	}
 	$response = array('pesan'=>$pesan, 'data'=>$_POST);
 	echo json_encode($response);
@@ -33,17 +33,17 @@ if (isset($_POST['Input'])) {
 	
 	//update data
 	$query = sprintf("UPDATE mahasiswa SET nama='%s', alamat='%s' WHERE nim='%s'", 
-			mysql_escape_string($nama), 
-			mysql_escape_string($alamat),
-			mysql_escape_string($nim)
+			mysqli_escape_string($nama), 
+			mysqli_escape_string($alamat),
+			mysqli_escape_string($nim)
 		);
-	$sql = mysql_query($query);
+	$sql = mysqli_query($query);
 	$pesan = "";
 	if ($sql) {
 		$pesan = "Data berhasil disimpan";
 	} else {
 		$pesan = "Data gagal disimpan ";
-		$pesan .= mysql_error();
+		$pesan .= mysqli_error();
 	}
 	$response = array('pesan'=>$pesan, 'data'=>$_POST);
 	echo json_encode($response);
@@ -53,15 +53,15 @@ if (isset($_POST['Input'])) {
 	
 	//delete data
 	$query = sprintf("DELETE FROM mahasiswa WHERE nim='%s'", 
-			mysql_escape_string($nim)
+			mysqli_escape_string($nim)
 		);
-	$sql = mysql_query($query);
+	$sql = mysqli_query($query);
 	$pesan = "";
 	if ($sql) {
 		$pesan = "Data berhasil dihapus";
 	} else {
 		$pesan = "Data gagal dihapus ";
-		$pesan .= mysql_error();
+		$pesan .= mysqli_error();
 	}
 	$response = array('pesan'=>$pesan, 'data'=>$_POST);
 	echo json_encode($response);
@@ -90,14 +90,14 @@ if (isset($_POST['Input'])) {
 		
 	$query_total = "SELECT COUNT(*)". $query_from." ".$where;
 	
-	$sql = mysql_query($query) or die($query);
-	$sql_total = mysql_query($query_total) or die($query_total);
-	$total = mysql_fetch_row($sql_total);
+	$sql = mysqli_query($query) or die($query);
+	$sql_total = mysqli_query($query_total) or die($query_total);
+	$total = mysqli_fetch_row($sql_total);
 	$data = $_POST;
 	$data['total'] = $total[0];
 	$datax = array();
 	$datax_r = array();
-	while ($row = mysql_fetch_row($sql)) {
+	while ($row = mysqli_fetch_row($sql)) {
 		$rows['id'] = $row[0];
 		$datax['cell'] = $row;
 		array_push($datax_r, $datax);
@@ -108,8 +108,8 @@ if (isset($_POST['Input'])) {
 } else if (isset($_GET['action']) && $_GET['action'] == 'get_mhs') {
 	$nim = $_GET['nim'];
 	$query = "SELECT * FROM mahasiswa WHERE nim='$nim'";
-	$sql = mysql_query($query);
-	$row = mysql_fetch_assoc($sql);
+	$sql = mysqli_query($query);
+	$row = mysqli_fetch_assoc($sql);
 	echo json_encode ($row);
 	exit;
 }
