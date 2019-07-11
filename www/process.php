@@ -21,8 +21,7 @@
                 nama = '$nama',
                 jurusan = '$jurusan',
                 semester = '$semester',
-                tahun_angkatan = '$tahun_angkatan'
-                ";
+                tahun_angkatan = '$tahun_angkatan' ";
     }
     $result = mysqli_query($conn, $query);
 
