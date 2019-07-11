@@ -92,7 +92,7 @@ if (isset($_POST['Input'])) {
 		
 	$query_total = "SELECT COUNT(*)". $query_from." ".$where;
 	
-	$sql = mysqli_query($koneksi, $query) or die($koneksi, $query);
+	$sql = mysqli_query($koneksi, $query) or die($query);
 	$sql_total = mysqli_query($query_total) or die($query_total);
 	$total = mysqli_fetch_row($sql_total);
 	$data = $_POST;
