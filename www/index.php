@@ -10,11 +10,11 @@ if (isset($_POST['Input'])) {
 	$alamat = strip_tags($_POST['alamat']);
 	
 	//input ke db
-	$query = sprintf("INSERT INTO mahasiswa VALUES('%s', '%s', '%s')", 
-			mysqli_escape_string($nim), 
-			mysqli_escape_string($nama), 
-			mysqli_escape_string($alamat)
-		);
+	$query = "INSERT INTO mahasiswa SET
+                nim = '$nim',
+                nama = '$nama',
+                alamat = '$alamat'
+                ";
 	$sql = mysqli_query($koneksi, $query);
 	$pesan = "";
 	if ($sql) {
@@ -32,11 +32,13 @@ if (isset($_POST['Input'])) {
 	$alamat = strip_tags($_POST['alamat']);
 	
 	//update data
-	$query = sprintf("UPDATE mahasiswa SET nama='%s', alamat='%s' WHERE nim='%s'", 
-			mysqli_escape_string($nama), 
-			mysqli_escape_string($alamat),
-			mysqli_escape_string($nim)
-		);
+	$query = "UPDATE mahasiswa SET
+                nim = '$nim',
+                nama = '$nama',
+                alamat = '$alamat'
+                WHERE nim = '$nim'
+                ";
+
 	$sql = mysqli_query($query);
 	$pesan = "";
 	if ($sql) {
