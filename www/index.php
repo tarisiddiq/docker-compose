@@ -1,7 +1,6 @@
 <?php
 /* koneksi ke db */
-mysql_connect("localhost", "root", "") or die(mysql_error());
-mysql_select_db("demo") or die(mysql_error());
+mysql_connect("db","user", "test", "demo") or die(mysql_error());
 /* akhir koneksi db */
 
 /* penanganan form */
