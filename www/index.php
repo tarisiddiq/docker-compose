@@ -1,6 +1,6 @@
 <?php
 /* koneksi ke db */
-mysql_connect("db","user", "test", "demo") or die(mysql_error());
+mysqli_connect("db","user", "test", "demo") or die(mysqli_error());
 /* akhir koneksi db */
 
 /* penanganan form */
