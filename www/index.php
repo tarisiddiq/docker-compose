@@ -21,7 +21,7 @@ if (isset($_POST['Input'])) {
 		$pesan = "Data berhasil disimpan";
 	} else {
 		$pesan = "Data gagal disimpan ";
-		$pesan .= mysqli_error();
+		$pesan .= mysqli_error($koneksi);
 	}
 	$response = array('pesan'=>$pesan, 'data'=>$_POST);
 	echo json_encode($response);
@@ -45,7 +45,7 @@ if (isset($_POST['Input'])) {
 		$pesan = "Data berhasil disimpan";
 	} else {
 		$pesan = "Data gagal disimpan ";
-		$pesan .= mysqli_error();
+		$pesan .= mysqli_error($koneksi);
 	}
 	$response = array('pesan'=>$pesan, 'data'=>$_POST);
 	echo json_encode($response);
@@ -63,7 +63,7 @@ if (isset($_POST['Input'])) {
 		$pesan = "Data berhasil dihapus";
 	} else {
 		$pesan = "Data gagal dihapus ";
-		$pesan .= mysqli_error();
+		$pesan .= mysqli_error($koneksi);
 	}
 	$response = array('pesan'=>$pesan, 'data'=>$_POST);
 	echo json_encode($response);
