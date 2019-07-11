@@ -1,6 +1,6 @@
 <?php
 /* koneksi ke db */
-mysqli_connect("db","user", "test", "demo") or die(mysqli_error());
+$koneksi = mysqli_connect("db","user", "test", "demo") or die(mysqli_error());
 /* akhir koneksi db */
 
 /* penanganan form */
@@ -15,7 +15,7 @@ if (isset($_POST['Input'])) {
 			mysqli_escape_string($nama), 
 			mysqli_escape_string($alamat)
 		);
-	$sql = mysqli_query($query);
+	$sql = mysqli_query($koneksi, $query);
 	$pesan = "";
 	if ($sql) {
 		$pesan = "Data berhasil disimpan";
@@ -55,7 +55,7 @@ if (isset($_POST['Input'])) {
 	$query = sprintf("DELETE FROM mahasiswa WHERE nim='%s'", 
 			mysqli_escape_string($nim)
 		);
-	$sql = mysqli_query($query);
+	$sql = mysqli_query($koneksi, $query);
 	$pesan = "";
 	if ($sql) {
 		$pesan = "Data berhasil dihapus";
@@ -90,7 +90,7 @@ if (isset($_POST['Input'])) {
 		
 	$query_total = "SELECT COUNT(*)". $query_from." ".$where;
 	
-	$sql = mysqli_query($query) or die($query);
+	$sql = mysqli_query($koneksi, $query) or die($query);
 	$sql_total = mysqli_query($query_total) or die($query_total);
 	$total = mysqli_fetch_row($sql_total);
 	$data = $_POST;
@@ -108,7 +108,7 @@ if (isset($_POST['Input'])) {
 } else if (isset($_GET['action']) && $_GET['action'] == 'get_mhs') {
 	$nim = $_GET['nim'];
 	$query = "SELECT * FROM mahasiswa WHERE nim='$nim'";
-	$sql = mysqli_query($query);
+	$sql = mysqli_query($koneksi, $query);
 	$row = mysqli_fetch_assoc($sql);
 	echo json_encode ($row);
 	exit;
